@@ -31,12 +31,14 @@ public class CustomListTest {
     @Test
     void testCountCities() {
         CustomList cityList = new CustomList();
+        cityList.addCity(new City("Saskatoon", "Saskatchewan"));
         assertEquals(1, cityList.countCities());
 
-        cityList.addCity(new City("Saskatoon", "Saskatchewan"));
+        City city = new City("Edmonton", "Alberta");
+        cityList.addCity(city);
         assertEquals(2, cityList.countCities());
 
-        cityList.deleteCity(new City("Edmonton", "Alberta"));
+        cityList.deleteCity(city);
         assertEquals(1, cityList.countCities());
     }
 

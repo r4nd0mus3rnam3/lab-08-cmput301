@@ -18,5 +18,15 @@ public class CustomList {
     public boolean hasCity(City city) {
         return cities.contains(city);
     }
+    public void deleteCity(City city) {
+        if (!hasCity(city)) {
+            throw new IllegalArgumentException("City does not exist in the list.");
+        }
+        cities.remove(city);
+    }
+    public int countCities() {
+        return cities.size();
+    }
+
     // public boolean hasCity(City city) { ... }
 }
